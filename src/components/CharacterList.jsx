@@ -4,7 +4,12 @@ import Character from './Character';
 function NavPage(props) {
   return (
     <header className='d-flex justify-content-between align-items-center'>
-      <p>Page: {props.page}</p>
+      <button
+        className={props.page < 2 ? 'btn btn-primary btn-sm disabled' : 'btn btn-primary btn-sm'}
+        onClick={() => props.setPage(props.page - 1)}
+      >
+        Page: {props.page}
+      </button>
       <button
         className='btn btn-primary btn-sm'
         onClick={() => props.setPage(props.page + 1)}
